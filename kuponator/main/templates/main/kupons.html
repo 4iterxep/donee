@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Каталог{% endblock %}
+
+
+{% block content %}
+<h1 style="text-align: center; margin-top: 20px;">Каталог купонов</h1>
+<div class="row row-cols-3" style="text-align: center; margin: 0 auto; width: 70%;">
+
+    {% for el in kupons %}
+
+        <div class="border border-1 alert col" style="max-width: 400px; min-height: 155px;margin-left: 10px;">
+            <a href="{% url 'kupon_detail' el.id %}" class="nav-link">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.description }}</p>
+            </a>
+
+        </div>
+
+
+    {% endfor %}
+</div>
+{% endblock %}

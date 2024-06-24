@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block content %}
+<div class="container" style="text-align: center; padding: 2rem;">
+    <h1>Логин</h1>
+    {% if form.errors %}
+        <p class="nav-link">{{ form.errors.error }}</p>
+    {% endif %}
+    <form action="{% url 'login' %}" method="post">
+        {{ form }}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success" style="margin-top: 10px;">Войти</button>
+    </form>
+    <a href="{% url 'register' %}" class="btn btn-success" style="margin: 15px;">Создать аккаунт</a>
+    <br>
+    <a href="{% url 'password_reset' %}">Забыли пароль?</a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Поиск купонов{% endblock %}
+{% block main_style %}
+background: url('{% static 'main/img/photo.jpg' %}') no-repeat center / cover;
+{% endblock %}
+
+{% block content %}
+<br>
+<h1 style="text-align: center; color: white;">Результаты поиска</h1>
+<br>
+<div class="" style="text-align: center; ">
+
+    {% for el in object_list %}
+    <a href="{% url 'kupon_detail' el.id %}" class="nav-link" style=" color: white;margin: 0 auto; width: 70%; max-width: 400px; min-height: 155px;">
+        <div class="border border-1 alert bg-dark">
+            <h3>{{ el.title }}</h3>
+            <p>{{ el.description }}</p>
+
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+{% endblock %}

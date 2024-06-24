@@ -1,0 +1,25 @@
+
+.footer {
+    min-height: 7vh;
+}
+
+.main {
+    min-height: 80vh;
+    position: relative;
+    min-width: 100%;
+}
+
+.header {
+    min-height: 7vh;
+}
+
+
+
+.center_text{
+    display: flex; justify-content: center; align-items: center; text-align: center;
+}
+
+.footer-img{
+    width: 20px;
+    height: 20px;
+}

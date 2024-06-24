@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+
+{% block title %}{{ kupon.title }}{% endblock %}
+
+{% block content %}
+<div style="margin-top: 30px;">
+    <div class="container border border-3" style="text-align:center; margin: 0 auto; width: 70%;">
+        <span class="">
+        <h1>Магазин: {{ kupon.title }}</h1>
+
+        <p>{{ kupon.description }}</p>
+
+        <p>Купон: {{ kupon.code }}</p>
+
+        <p>Действует до: {{ kupon.date_exists }}</p>
+        <a href="{% url 'basket_add' kupon.id %}" class="sticky-bottom"><button class="btn btn-secondary">Добавить в избранное</button></a>
+        <h6 style="color: white;">.</h6>
+    </div>
+</div>
+{% endblock %}

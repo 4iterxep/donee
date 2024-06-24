@@ -1,0 +1,15 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block main_style %}
+background: url('{% static 'main/img/bg.jpg' %}') no-repeat center / cover;
+{% endblock %}
+
+{% block content %}
+    <div style="color: white; text-align: center; position: absolute; top: 40%; margin-left:20%; margin-right: 20%;">
+        <h2>Купонатор - это сайт, собравший в себе множество купонов для магазинов Курска. <br><div class="btn btn-dark" style="font-size: 25px;font-weight: 600; margin-top: 25px;"><a class="nav-link" href="{% url 'index' %}">Перейти в каталог</a></div></h2>
+
+    </div>
+{% endblock %}

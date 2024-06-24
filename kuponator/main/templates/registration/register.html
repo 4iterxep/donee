@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block title %}Регистрация{% endblock %}
+{% block main_style %}
+{% endblock %}
+
+{% block content %}
+<div class="container" style="padding-top: 25px;">
+    <form action="{% url 'register' %}" method="post">
+        {{ form }}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success" style="margin-top:15px;">Создать аккаунт</button>
+    </form>
+</div>
+{% endblock %}
